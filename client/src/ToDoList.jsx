@@ -34,7 +34,7 @@ const ToDoList = () => {
     fetchData();
   }, []);
 
-
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
     setAddTask({ ...addTask, [name]: value });

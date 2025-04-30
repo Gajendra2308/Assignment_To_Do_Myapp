@@ -10,10 +10,10 @@ import { useState } from "react";
 const ListItem = ({ todoList, setAddTask, isListLoading, fetchData }) => {
   const [isDeleteLoading, setIsDeleteLoading] = useState(false);
   const [isCompleteLoading, setIsCompleteLoading] = useState(false);
-
   const API_BACKEND = import.meta.env.VITE_API_BASE_URL;
-
-  const handleEdit = (task) => {
+  
+  
+  const handleEdit = (task)=> {
     setAddTask(task);
   };
 
@@ -24,7 +24,6 @@ const ListItem = ({ todoList, setAddTask, isListLoading, fetchData }) => {
       },
     };
       async function deleteData() {
-   // async function deleteData() {
       setIsDeleteLoading(true);
       try {
         await axios.delete(`${API_BACKEND}/delete/${_id}`, headers);
