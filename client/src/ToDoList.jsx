@@ -35,7 +35,7 @@ const ToDoList = () => {
   }, []);
 
   
-  const handleChange = (event) => {
+    const handleChange = (event) => {
     const { name, value } = event.target;
     setAddTask({ ...addTask, [name]: value });
   };
@@ -62,7 +62,7 @@ const ToDoList = () => {
             headers
           );
 
-          await fetchData();
+          await fetchData();  
           toast.success("Task updated");
           setAddTask(initialValue);
         } catch (error) {
@@ -78,12 +78,12 @@ const ToDoList = () => {
         todoValue: addTask.todoValue.trim(),
         isCompleted: false,
       };
-
       const headers = {
         headers: {
           "Content-Type": "application/json",
         },
       };
+
 
       setButtonLoading(true);
       async function postData() {
